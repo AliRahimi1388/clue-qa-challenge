@@ -24,7 +24,7 @@ class SignUpTest : AndroidTestBase() {
     @Test
     fun signUpAndCheckSignedIn() {
         with(SignUpModule(activityRule)) {
-            iHaveMainActivity()
+            iHaveLoginActivity()
         }
 
     }
