@@ -1,38 +1,41 @@
-# Test automation challenge
+# Clue QA Challenge by Ivan Skvortsov
 
-Welcome to the test automation challenge!
+Initial task can be found [here](TASK.md) .
 
-We know you are busy, so we don't expect you to invest a long time in solving this. This is designed to be a short, but open-ended challenge. We trust you to timebox it, and do as much as you can in a few hours (we suggest a maximum of 4 hours), in order to show your amazing skills!
+## Tools
 
-If something isn’t clear, just send us an email with your questions, just like you would do if this was a real day-to-day assignment. We want you to succeed as much as you do, so don't worry if you have a question!
+### [Kakao](https://github.com/KakaoCup/Kakao)
 
+It's a real nice framework that reduces clutter in tests and makes your Screen Object classes look neat and clean. 
+It also helps that Kakao has built-in wait (5 sec timeout, if I'm not mistaken) and using it without any additions is perfectly fine for a project with local/mocked server. 
 
-## Instructions
+Other than that, I didn't use any external tools.
 
-![app](images/app.gif)
+### Pattern - Screen Object
 
-* Download and inspect the open-sourced android application from the current repo
-* Design a test suite for the sign-up and login functionality
-* Build an infrastructure for test case implementation
-* Implement your test cases
+I usually pick this as it makes sense to have all screen Views and actions with them at one place. Kakao helps with this a lot and makes the code even more straightforward and clean.
 
-## Grading
-With this task we would like to get an idea of how you would approach automation. There is no “correct” solution to this task.
+It was also possible to use Robot pattern, but it's not always the best choice and can make the test framework unnecessarily complex (personal experience)
 
-The challenge will be evaluated on:
-* The reasoning behind the framework and pattern you've selected
-* The quality of the solution, rather than the quantity of automated tests
-* Vision and future proofing - the potential of your solution to be expanded, and your description of where you would take it.
-* Your coding style
-* Your usage of git (we encourage you to keep .git history :) )
-* Documentation, including possible improvements or different approaches
+## Possible improvements
 
-## Expected deliverables
+It's possible to simulate no connection and bad connection for this app and check corresponding errors described in [strings.xml - lines 19-21](app/src/main/res/values/strings.xml)
 
-* Working automated test suite on provided android build
-* README.md file describing your tools, assumptions, solutions and next possible steps to develop this solution more robust
+If there is a plan to use "real" remote server in the future, it would make sense to implement IdlingResourse to wait for server response.
 
-We mainly want to see how you think, the reasoning behind the tools you selected, including potential drawbacks and advantages, so the more you can back up your ideas with strong arguments, the better. We are conscious of your time. It's fine if you need to skimp on some aspects to save time - mention your decisions in your README. The aim is to get an idea of your coding style and level, as well as how you go about creating an automation framework.
+It might be a good idea to implement [Kaspresso](https://github.com/KasperskyLab/Kaspresso) for better UI test logs and test structure and faster execution.
 
+If the project calls for BDD - I would use [Cucumber](https://cucumber.io) along with Kakao.
 
-And lastly, have fun with it! Good luck!
+If there will be lots of tests in the future, it would be nice to run them in parallel on some cloud service like Firebase Testlab, and I would use [Flank/Fladle](https://github.com/runningcode/fladle) to be able to run those tests in parallel.
+
+In other words, there are many possibilities, but too little time... :) 
+
+### Some feedback regarding the test app
+
+I understand that this test assignment is based on the open-source app, but it would be so much better if Clue team could provide self-developed dummy app with similar functions.
+The thing is that current open-source app has lots of unnecessary stuff, and I actually had trouble compiling it in it's initial form. 
+
+It would be also cool if you could include versions for JDK, Gradle, Docker, and any other tools needed to compile the app in order to save candidates some time and makes their test assignment more fun.
+
+Never forget that this test assignment is not only used by Clue team to verify candidate skills, it's also used by candidates and gives them a taste of their possible future tasks. 
