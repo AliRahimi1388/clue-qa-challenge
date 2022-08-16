@@ -30,7 +30,10 @@ after all you can run testcase using Android Studio or below command as CI gradl
 ./gradlew connectedAndroidTest
 ```
 * this command generate html report in HTML test result files: */build/reports/androidTests/connected/ directory.
+* furthermore, you can use it this command to run testcase on all variants and all connected devices
+* there are better solution than junit runner like spoon or marathon opensource tools
 
+* this application test on Api 31 and version 1.0 of this android application
 
 ## Finally
 
