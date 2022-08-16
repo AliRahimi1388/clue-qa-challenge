@@ -30,7 +30,7 @@ open class AndroidTestBase {
 
     @Before
     open fun setup() {
-        //        TestUtils.pressHome()
+        TestUtils.pressHome()
     }
 
     @After

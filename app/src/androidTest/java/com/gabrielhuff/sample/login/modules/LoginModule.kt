@@ -3,9 +3,9 @@ package com.gabrielhuff.sample.login.modules
 import android.app.Activity
 import androidx.test.rule.ActivityTestRule
 import com.gabrielhuff.sample.login.steps.BaseSteps
-import com.gabrielhuff.sample.login.steps.SignUpSteps
+import com.gabrielhuff.sample.login.steps.LoginSteps
 
-class SignUpModule(
+class LoginModule(
     activityRule: ActivityTestRule<out Activity>,
 ) : BaseSteps(activityRule),
-    SignUpSteps
+    LoginSteps
