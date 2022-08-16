@@ -22,7 +22,7 @@ class SignUpAndLoginTest : AndroidTestBase() {
     }
 
     @Test
-    fun signUpAndCheckSignedIn() {
+    fun signUpTest() {
         val usernameToSignUp = "username" + (0..100).random()
         val passwordToSignUp = "12345678"
         with(SignUpModule(activityRule)) {
@@ -44,6 +44,24 @@ class SignUpAndLoginTest : AndroidTestBase() {
             iInputUsername(usernameToSignUp)
             iInputPassword(passwordToSignUp)
             iClickLoginButton()
+        }
+    }
+
+    @Test
+    fun signUpWithMisMatchConfirmPasswordToSeeErrorMessageTest() {
+        val usernameToSignUp = "username" + (0..100).random()
+        val passwordToSignUp = "12345678"
+        val missMatchPasswordToSignUp = "123456"
+        with(SignUpModule(activityRule)) {
+            iHaveLoginActivity()
+            iClickSignUp()
+            iInputUsername(usernameToSignUp)
+            iInputPassword(passwordToSignUp)
+            iInputPasswordConfirm(missMatchPasswordToSignUp)
+            iShouldSeeMisMatchErrorPassword()
+            iInputPasswordConfirm(passwordToSignUp)
+            iShouldNotSeeMisMatchErrorPassword()
+            iClickSignUp()
         }
     }
 }
