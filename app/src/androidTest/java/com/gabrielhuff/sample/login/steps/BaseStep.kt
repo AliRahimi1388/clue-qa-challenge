@@ -16,17 +16,17 @@ open class BaseSteps(
         return activityRule.activity
     }
 
-    fun iHaveMainActivity() {
+    fun iHaveLoginActivity() {
         Assert.assertNotNull(getActivity())
         assert(getActivity() is LoginActivity)
     }
 
-    fun iHaveIntroActivity() {
+    fun iHaveLoggedInActivity() {
         Assert.assertNotNull(getActivity())
         assert(getActivity() is LoggedInActivity)
     }
 
-    fun iHaveUserCityActivity() {
+    fun iHaveSignUpActivity() {
         Assert.assertNotNull(getActivity())
         assert(getActivity() is SignUpActivity)
     }
