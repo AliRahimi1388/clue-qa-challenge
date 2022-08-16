@@ -1,7 +1,7 @@
 // Setup build script classpath
 
 buildscript {
-    ext.kotlinVersion = '1.2.51'
+    ext.kotlinVersion = '1.4.20'
     ext.springBootVersion = '2.0.0.M7'
     repositories {
         jcenter()
@@ -109,13 +109,13 @@ test.finalizedBy jacocoTestReport
 // Setup dependencies
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
-    compile "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
-    compile "org.springframework.boot:spring-boot-starter-webflux:$springBootVersion"
-    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
-    compile "com.h2database:h2:1.4.196"
-    compile "io.jsonwebtoken:jjwt:0.9.0"
+    api "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    api "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
+    api "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    api "org.springframework.boot:spring-boot-starter-webflux:$springBootVersion"
+    api "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    api "com.h2database:h2:1.4.196"
+    api "io.jsonwebtoken:jjwt:0.9.0"
 
-    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
 }
