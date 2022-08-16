@@ -34,7 +34,7 @@ class SimpleDialog : DialogFragment() {
         val dialog = AlertDialog.Builder(context!!).setView(view).create()
 
         // Make view background transparent (so the edges become effectively rounded)
-        dialog.window.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
         // Return dialog
         return dialog
